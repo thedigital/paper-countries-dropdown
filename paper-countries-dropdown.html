@@ -580,7 +580,7 @@ If you want to save it in bower.json file, remember to add flag --save
           return;
         }
         var countryFound = this._suggestions.find((country) => {
-          return country.name.toLowerCase() == countryVal.toLowerCase() || country.dial_code.toLowerCase() == countryVal.toLowerCase();
+          return country.name.toLowerCase() === countryVal.toLowerCase() || (country.dial_code !== "" && country.dial_code.toLowerCase() === countryVal.toLowerCase());
         });
         if (countryFound) {
           this.country = {
