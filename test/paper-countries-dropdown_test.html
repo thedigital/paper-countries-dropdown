@@ -15,25 +15,25 @@
 
     <test-fixture id="basic">
       <template>
-        <paper-countries></paper-countries>
+        <paper-countries-dropdown></paper-countries-dropdown>
       </template>
     </test-fixture>
 
     <test-fixture id="dataBinding">
       <template>
-        <paper-countries country='{"name":"India","code":"in"}'></paper-countries>
+        <paper-countries-dropdown country='{"name":"India","code":"in"}'></paper-countries-dropdown>
       </template>
     </test-fixture>
 
     <test-fixture id="advanced">
       <template>
-        <paper-countries></paper-countries>
+        <paper-countries-dropdown></paper-countries-dropdown>
       </template>
     </test-fixture>
 
     <script>
     /* global suite fixture test setup assert MockInteractions flush */
-      suite('paper-countries properties', function() {
+      suite('paper-countries-dropdown properties', function() {
         let element;
 
         setup(() => {
@@ -41,7 +41,7 @@
         });
 
         test('instantiating the element works', function() {
-          assert.equal(element.is, 'paper-countries');
+          assert.equal(element.is, 'paper-countries-dropdown');
         });
 
         test('get default label attribute', function() {

@@ -1,17 +1,18 @@
 {
-  "name": "selvinfehric/paper-countries",
-  "version": "1.0.1",
-  "homepage": "https://github.com/selvinfehric/paper-countries",
+  "name": "paper-countries-dropdown",
+  "version": "1.0.0",
+  "homepage": "https://github.com/selvinfehric/paper-countries-dropdown",
   "authors": [
     "Selvin Fehric"
   ],
-  "description": "Country flag dropdown with dial codes",
-  "main": "paper-countries.html",
+  "description": "Countries dropdown with flags and dial codes",
+  "main": "paper-countries-dropdown.html",
   "keywords": [
     "polymer",
     "web-component",
     "web-components",
     "paper-countries",
+    "paper-countries-dropdown",
     "country-flags",
     "country-flags-dropdown"
   ],

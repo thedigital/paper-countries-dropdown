@@ -20,17 +20,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <script src="src/countries.js"></script>
 <!--
 
-`<paper-countries>` is a typeahead component based on Polymer thats provides user with a sleek way of selecting a country from a prefetched list.
+`<paper-countries-dropdown>` is a typeahead component based on Polymer thats provides user with a sleek way of selecting a country from a prefetched list.
 
-    <paper-countries country="[[country]]" value="[[country.name]]" auto-validate="true" placeholder="Country"></paper-countries>
+    <paper-countries-dropdown country="[[country]]" value="[[country.name]]" auto-validate="true" placeholder="Country"></paper-countries-dropdown>
 
 The label that will show up as the label for tags input. It not specified, the default Country will be displayed. In this case max-suggestions set to 2.
 
 It also allows limiting the no of suggestions in the dropdown. By default value is 5.
 
-    <paper-countries max-suggestions="2"  country="[[country]]" value="[[country.name]]" auto-validate="true" placeholder="Country">
+    <paper-countries-dropdown max-suggestions="2"  country="[[country]]" value="[[country.name]]" auto-validate="true" placeholder="Country"></paper-countries-dropdown>
 
-A `paper-countries` can use the country property to set country name in the dropdown along with the country flag.
+A `paper-countries-dropdown` can use the country property to set country name in the dropdown along with the country flag. Also you can use country property to set country using country code or country dial code.
 The result of selected output looks like `{ code: AU, name: Australia, dial_code: '+61'}`
 
 ### Styling
@@ -41,16 +41,16 @@ The following custom properties are available for styling:
 
 Install with bower
 
-    bower install selvinfehric/paper-countries
+    bower install selvinfehric/paper-countries-dropdown
 
 If you want to save it in bower.json file, remember to add flag --save
 
-    bower install --save selvinfehric/paper-countries
+    bower install --save selvinfehric/paper-countries-dropdown
 
-@element selvinfehric/paper-countries
+@element selvinfehric/paper-countries-dropdown
 @demo demo/index.html
 -->
-<dom-module id="paper-countries">
+<dom-module id="paper-countries-dropdown">
   <template>
     <style include="flag-icons-styles"></style>
     <style>
@@ -188,10 +188,10 @@ If you want to save it in bower.json file, remember to add flag --save
     const DEAD_KEY = 229;
 
     Polymer({
-      is: 'paper-countries',
+      is: 'paper-countries-dropdown',
       properties: {
         /**
-         * The label for paper-countries
+         * The label for paper-countries-dropdown
          */
         label: {
           type: String,
@@ -199,7 +199,7 @@ If you want to save it in bower.json file, remember to add flag --save
         },
 
         /**
-         * Set to true to mark the paper-countries as required.
+         * Set to true to mark the paper-countries-dropdown as required.
          */
         required: {
           type: Boolean,
@@ -208,7 +208,7 @@ If you want to save it in bower.json file, remember to add flag --save
 
         /**
          * A placeholder string in addition to the label which is shown in
-         * paper-countries input field like default value
+         * paper-countries-dropdown input field like default value
          */
         placeholder: {
           type: String,
@@ -224,7 +224,7 @@ If you want to save it in bower.json file, remember to add flag --save
         },
 
         /**
-         * Paper-countries input value.
+         * Paper-countries-dropdown input value.
          */
         value: {
           type: String,
@@ -232,7 +232,7 @@ If you want to save it in bower.json file, remember to add flag --save
         },
 
         /**
-         * Set to true to always float the label on paper-countries.
+         * Set to true to always float the label on paper-countries-dropdown.
          */
         alwaysFloatLabel: {
           type: Boolean,
@@ -248,7 +248,7 @@ If you want to save it in bower.json file, remember to add flag --save
         },
 
         /**
-         * Set to true to disable paper-countries.
+         * Set to true to disable paper-countries-dropdown.
          */
         disabled: {
           type: Boolean,
@@ -268,7 +268,7 @@ If you want to save it in bower.json file, remember to add flag --save
           value: false,
         },
         /**
-         * Set to true to set paper-countries in readonly mode
+         * Set to true to set paper-countries-dropdown in readonly mode
          */
         readonly: {
           type: Boolean,
