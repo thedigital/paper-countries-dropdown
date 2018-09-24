@@ -1,8 +1,8 @@
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/selvinfehric/paper-countries)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/selvinfehric/paper-countries-dropdown)
 
-# paper-countries
+# paper-countries-dropdown
 
-This is a fork of https://github.com/bluewatertracks/paper-countries. 
+This component is based on https://github.com/bluewatertracks/paper-countries. 
 Main changes in compare to original component are:
 - Search country by country name and/or country dial code
 - Preselect country by country code, country name or country dial code
@@ -13,11 +13,11 @@ Main changes in compare to original component are:
 
 The element can be installed using bower
 ```
-    bower install selvinfehric/paper-countries
+    bower install selvinfehric/paper-countries-dropdown
 ```
 If you want to save it in bower.json file, remember to add flag `--save`
 ```
-    bower install selvinfehric/paper-countries --save
+    bower install selvinfehric/paper-countries-dropdown --save
 ```
 
 ## Usage
@@ -27,9 +27,9 @@ If you want to save it in bower.json file, remember to add flag `--save`
 <custom-element-demo>
     <template>
       <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-      <link rel="import" href="paper-countries.html">
+      <link rel="import" href="paper-countries-dropdown.html">
       <style>
-        paper-countries {
+        paper-countries-dropdown {
             height: 330px;
 	        overflow:hidden;
         }
@@ -41,7 +41,7 @@ If you want to save it in bower.json file, remember to add flag `--save`
  -->
  
 ```html
-<paper-countries label="Country name" placeholder="Enter country name or dial code"></paper-countries>
+<paper-countries-dropdown label="Country name" placeholder="Enter country name or dial code"></paper-countries-dropdown>
 ```
 
 ## Contributing
