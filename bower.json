@@ -1,6 +1,6 @@
 {
   "name": "paper-countries-dropdown",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/selvinfehric/paper-countries-dropdown",
   "authors": [
     "Selvin Fehric"
@@ -26,14 +26,14 @@
   ],
   "dependencies": {
     "flag-icon-css": "^2.7.0",
-    "polymer": "1 - 2",
+    "polymer": "^2.0.0",
     "paper-input": "^2.0.0",
     "paper-listbox": "^2.0.0",
     "paper-item": "^2.0.0",
     "iron-ajax": "^2.0.0",
     "paper-material": "^2.0.0",
-    "iron-component-page": "^2.0.0",
-    "webcomponentsjs": "^1.0.10",
+    "iron-component-page": "^3.0.0",
+    "webcomponentsjs": "^1.0.0",
     "iron-form-element-behavior": "PolymerElements/iron-form-element-behavior#^2.0.0",
     "paper-icon-button": "^2.2.0"
   },
@@ -41,8 +41,5 @@
     "iron-demo-helpers": "^2.0.0",
     "web-component-tester": "^6.0.0",
     "iron-test-helpers": "^2.0.0"
-  },
-  "resolutions": {
-    "test-fixture": "^3.0.0-rc.1"
   }
 }
