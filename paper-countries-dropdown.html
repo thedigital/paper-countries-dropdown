@@ -149,9 +149,9 @@ If you want to save it in bower.json file, remember to add flag --save
     <div class="container">
       <p class$="countrycode {{_getClasses(noLabelFloat)}}">{{_getAutoDisplay(_suggestion)}}</p>
       <paper-input id="input" value="{{value}}" on-keyup="_keyup" on-keydown="_keydown" label="[[label]]" always-float-label="[[alwaysFloatLabel]]"
-        autofocus="[[autofocus]]" disabled="[[disabled]]" error-message="[[errorMessage]]" no-label-float="[[noLabelFloat]]"
-        readonly="[[readonly]]" placeholder="[[placeholder]]" required="[[required]]" auto-validate="[[autoValidate]]" on-focusout="_autoselect"
-        on-tap="_onInputTap">
+      autofocus="[[autofocus]]" disabled="[[disabled]]" error-message="[[errorMessage]]" no-label-float="[[noLabelFloat]]"
+      readonly="[[readonly]]" placeholder="[[placeholder]]" required="[[required]]" auto-validate="[[autoValidate]]" on-focusout="_autoselect"
+      on-tap="_onInputTap">
       </paper-input>
       <span id="inputIcon" class$="flag-icon flag-icon-[[_getCountryCode(country.code)]]"></span>
       <paper-icon-button class="huge" id="expandButton" tabindex="-1" slot="suffix" icon="arrow-drop-down" on-tap="_toggleList"></paper-icon-button>
@@ -570,7 +570,7 @@ If you want to save it in bower.json file, remember to add flag --save
         // Need to check if length is zero ,
         if (!this._selected &&
           this._suggestions.length < 1 &&
-          this.inputValue) {
+          this.$.input.value) {
           this.focus();
           this.country = {};
           this._selected = false;
@@ -623,6 +623,20 @@ If you want to save it in bower.json file, remember to add flag --save
         this.$.input.errorMessage = selectValidCountry;
         this.focus();
       },
+
+      validate: function () {
+        if (!this._selected && this._suggestions.length < 1 && this.$.input.value == "" && this.required) {
+          this.focus();
+          this.country = {};
+          this._selected = false;
+          this.$.input.invalid = true;
+          this.$.input.errorMessage = this.errorMessage ||
+            selectValidCountry;
+        } else {
+          this.$.input.invalid = false;
+          this.$.input.errorMessage = "";
+        }
+      }
     });
   }());
 </script>
