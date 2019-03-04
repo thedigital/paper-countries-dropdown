@@ -457,6 +457,7 @@ If you want to save it in bower.json file, remember to add flag --save
       _clearValue: function () {
         this.country = {};
         this.$.input.value = '';
+        this._selected = false;
         this.focus();
         this._searchCountries('');
       },
@@ -632,9 +633,11 @@ If you want to save it in bower.json file, remember to add flag --save
           this.$.input.invalid = true;
           this.$.input.errorMessage = this.errorMessage ||
             selectValidCountry;
+          return false;
         } else {
           this.$.input.invalid = false;
           this.$.input.errorMessage = "";
+          return true;
         }
       }
     });
