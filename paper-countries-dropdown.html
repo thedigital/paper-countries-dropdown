@@ -537,8 +537,8 @@ If you want to save it in bower.json file, remember to add flag --save
             countries[index]['fullName'] = countries[index].name + ' ' + countries[index].dial_code;
         });
 
-        countryCodes.forEach(code => {
-          countryCodes[index] = code.toUpperCase();
+        countriesArray.forEach(function(part, index) {
+            countriesArray[index] = countriesArray[index].toUpperCase();
         })
 
         if(this.countryCodes && this.countryCodes.length > 0) {
