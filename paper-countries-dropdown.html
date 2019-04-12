@@ -289,17 +289,25 @@ If you want to save it in bower.json file, remember to add flag --save
           notify: true,
           observer: '_countryChange',
         },
+
+        countryCodes: {
+            type: Array,
+            notify: true
+        },
         /**
          * The prefetched candidates hold all countries
          */
-        _prefetchedCandidates: {
+         _prefetchedCandidates: {
           type: Array,
+          computed: 'filterCountries(countryCodes)',
+
+          // Calculate initial value before filtering
           value: () => {
             countries.forEach(function (part, index, theArray) {
-              countries[index]['fullName'] = countries[index].name + ' ' + countries[index].dial_code;
+                countries[index]['fullName'] = countries[index].name + ' ' + countries[index].dial_code;
             });
             return countries;
-          },
+          }
         },
         /**
          * Internal variable holding all matched suggestions.
@@ -522,6 +530,24 @@ If you want to save it in bower.json file, remember to add flag --save
           this.$.input.invalid = true;
           this.$.input.errorMessage = this.errorMessage || selectValidCountry;
         }
+      },
+
+      filterCountries(countryCodes) {
+        countries.forEach(function (part, index, theArray) {
+            countries[index]['fullName'] = countries[index].name + ' ' + countries[index].dial_code;
+        });
+
+        countryCodes.forEach(code => {
+          countryCodes[index] = code.toUpperCase();
+        })
+
+        if(this.countryCodes && this.countryCodes.length > 0) {
+            var supportedCountries = countries.filter(function(item) {
+                return this.indexOf(item.code) >= 0;
+            }, countryCodes);
+            return supportedCountries;
+        }
+        return countries;
       },
 
       _countryChange: function (country) {
