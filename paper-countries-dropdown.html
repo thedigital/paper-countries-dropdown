@@ -72,6 +72,7 @@ If you want to save it in bower.json file, remember to add flag --save
 
       paper-item {
         cursor: pointer;
+        padding: 0px 10px;
       }
 
       .countrycode::first-letter {
@@ -103,21 +104,20 @@ If you want to save it in bower.json file, remember to add flag --save
 
       .flag-icon {
         background-size: contain;
-        background-position: 25%;
         background-repeat: no-repeat;
         position: absolute;
         display: inline-block;
-        width: 100px;
-        height: 30px;
+        margin-right: 10px;
+        width: 22px;
       }
 
       #inputIcon {
-        right: 25px;
-        top: 18px;
+        right: -8px;
+        bottom: 15px;
       }
 
       .menu-icon {
-        right: -20px;
+        right: 0px;
       }
 
       iron-icon {
@@ -154,8 +154,8 @@ If you want to save it in bower.json file, remember to add flag --save
       on-tap="_onInputTap">
       </paper-input>
       <span id="inputIcon" class$="flag-icon flag-icon-[[_getCountryCode(country.code)]]"></span>
-      <paper-icon-button class="huge" id="expandButton" tabindex="-1" slot="suffix" icon="arrow-drop-down" on-tap="_toggleList"></paper-icon-button>
-      <paper-icon-button class="huge" id="clearButton" tabindex="-1" slot="suffix" icon="clear" on-tap="_clearValue"></paper-icon-button>
+      <paper-icon-button hidden$="[[hideExpandButton]]" class="huge" id="expandButton" tabindex="-1" slot="suffix" icon="arrow-drop-down" on-tap="_toggleList"></paper-icon-button>
+      <paper-icon-button hidden$="[[hideClearButton]]" class="huge" id="clearButton" tabindex="-1" slot="suffix" icon="clear" on-tap="_clearValue"></paper-icon-button>
       <template is="dom-if" if="[[_suggestions.length]]">
         <paper-material>
           <paper-listbox id="listbox">
@@ -243,6 +243,22 @@ If you want to save it in bower.json file, remember to add flag --save
          * Bind this to the <paper-input>'s autofocus property.
          */
         autofocus: {
+          type: Boolean,
+          value: false,
+        },
+
+        /**
+         * Set to true to hide the clear button
+         */
+        hideClearButton: {
+          type: Boolean,
+          value: false,
+        },
+
+        /**
+         * Set to true to hide the clear button
+         */
+        hideExpandButton: {
           type: Boolean,
           value: false,
         },
